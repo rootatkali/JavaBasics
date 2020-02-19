@@ -158,6 +158,19 @@ public class Helper {
     }
   }
   
+  /**
+   * Returns the first <code>null</code> value in an array.
+   * @param arr The array to look in.
+   * @param <T> The type of the array elements
+   * @return the index of the first <code>null</code> value, or <code>-1</code> if not found.
+   */
+  public static <T> int firstNull(T[] arr) {
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] == null) return i;
+    }
+    return -1;
+  }
+  
   /* # 2D ARRAY TOOLS */
   
   /**
