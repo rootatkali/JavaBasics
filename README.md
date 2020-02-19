@@ -18,3 +18,12 @@ The class has some useful methods for arrays and other features. Examples includ
 * Generating random arrays
 
 And more.
+
+To use the Helper class:
+```java
+import helper.Helper;
+```
+And in your method:
+```java
+int[] arr = Helper.genArr(10, 0, 9);
+```
