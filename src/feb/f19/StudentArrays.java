@@ -1,5 +1,6 @@
 package feb.f19;
 
+import basics.Point2D;
 import basics.Student;
 
 import java.util.Arrays;
@@ -53,6 +54,18 @@ public class StudentArrays {
   
   public static String cheekyToString(Student[] arr) {
     return Arrays.toString(arr);
+  }
+  
+  // Task 4
+  public static int inCirc(Point2D[] arPt, double d) {
+    int ret = 0;
+    Point2D origin = new Point2D(0, 0);
+    for (int i = 0; i < arPt.length; i++) {
+      if (arPt[i].distance(origin) <= d) {
+        ret++;
+      }
+    }
+    return ret;
   }
   
   public static void main(String[] args) {
