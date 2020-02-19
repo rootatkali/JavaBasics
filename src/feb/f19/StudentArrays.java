@@ -37,6 +37,24 @@ public class StudentArrays {
     return -1;
   }
   
+  // Task 3
+  public static String goodToString(Student[] arr) {
+    String ret = "[";
+    
+    for (int i = 0; i < arr.length; i++) {
+      ret += arr[i].toString();
+      if (i != arr.length - 1) {
+        ret += ", ";
+      }
+    }
+    
+    return ret + "]";
+  }
+  
+  public static String cheekyToString(Student[] arr) {
+    return Arrays.toString(arr);
+  }
+  
   public static void main(String[] args) {
     // Task 1
 //    Student[] stArr = new Student[10];
