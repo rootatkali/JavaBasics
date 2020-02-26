@@ -42,7 +42,7 @@ public class Helper {
   public static int[] genArr(int size, int lo, int hi) {
     int[] arr = new int[size];
     for (int i = 0; i < size; i++) {
-      arr[i] = (int) (Math.random() * (hi - lo + 1) + lo);
+      arr[i] = rand(lo, hi);
     }
     return arr;
   }

@@ -20,10 +20,13 @@ The class has some useful methods for arrays and other features. Examples includ
 And more.
 
 To use the Helper class:
-```java
-import helper.Helper;
-```
-And in your method:
-```java
-int[] arr = Helper.genArr(10, 0, 9);
-```
+1. Copy the file from `helper` folder to a folder called `helper` on your project.
+2. Type on the top of your line:
+    ```java
+    import helper.Helper;
+    ```
+3. Type in your classes:
+    ```java
+    int[] arr = Helper.genArr(10, 0, 9);
+    int[][] mat = Helper.genMat(10, 10, 0, 1);
+    ```
