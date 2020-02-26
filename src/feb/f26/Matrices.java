@@ -47,6 +47,47 @@ public class Matrices {
     return true;
   }
   
+  // TASK 5
+  public static boolean unitMat(int[][] mat) {
+    for (int r = 0; r < mat.length; r++) {
+      for (int c = 0; c < mat.length; c++) {
+        if (r == c) {
+          if (mat[r][c] != 1) return false;
+        } else {
+          if (mat[r][c] != 0) return false;
+        }
+      }
+    }
+    return true;
+  }
+  
+  // TASK 6
+  public static int[][] addMat(int[][] a, int[][] b) {
+    int[][] ret = new int[a.length][a[0].length];
+    
+    for (int r = 0; r < a.length; r++) {
+      for (int c = 0; c < a[r].length; c++) {
+        ret[r][c] = a[r][c] + b[r][c];
+      }
+    }
+    return ret;
+  }
+  
+  // TASK 7
+  public static void mulC(int[][] a, int val) {
+    for (int r = 0; r < a.length; r++) {
+      for (int c = 0; c < a[r].length; c++) {
+        a[r][c] = a[r][c] * val;
+      }
+    }
+  }
+  
+  // TASK 8
+  public static int[][] subMat(int[][] a, int[][] b) {
+    mulC(b, -1);
+    return addMat(a, b);
+  }
+  
   public static void main(String[] args) {
     int[][] test = genMat(10, 10, 0, 9);
     System.out.println(matToString(test));
