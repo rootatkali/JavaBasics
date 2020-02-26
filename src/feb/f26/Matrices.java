@@ -88,6 +88,31 @@ public class Matrices {
     return addMat(a, b);
   }
   
+  // TASK 9
+  public static void transpose(int[][] mat) {
+    int tmp;
+    for (int r = 0; r < mat.length; r++) {
+      for (int c = 0; c < mat[r].length; c++) {
+        tmp = mat[r][c];
+        mat[r][c] = mat[c][r];
+        mat[c][r] = tmp;
+      }
+    }
+  }
+  
+  // TASK 10
+  public static boolean same(int[][] a, int[][] b) {
+    if (a.length != b.length) return false;
+    if (a[0].length != b[0].length) return false;
+    
+    for (int r = 0; r < a.length; r++) {
+      for (int c = 0; c < a[r].length; c++) {
+        if (a[r][c] != b[r][c]) return false;
+      }
+    }
+    return true;
+  }
+  
   public static void main(String[] args) {
     int[][] test = genMat(10, 10, 0, 9);
     System.out.println(matToString(test));
