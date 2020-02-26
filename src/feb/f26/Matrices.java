@@ -37,11 +37,36 @@ public class Matrices {
     return sum;
   }
   
+  // TASK 4
+  public static boolean sym(int[][] mat) {
+    for (int c = 0; c < mat.length; c++) {
+      for (int r = 0; r < c; r++) {
+        if (mat[r][c] != mat[c][r]) return false;
+      }
+    }
+    return true;
+  }
+  
   public static void main(String[] args) {
     int[][] test = genMat(10, 10, 0, 9);
     System.out.println(matToString(test));
     System.out.println(sumMainDiag(test));
     System.out.println(sumSecDiag(test));
     System.out.println(sumPerimeter(test));
+    
+    int[][] sym = {
+        {1, 2, 3},
+        {2, 2, 2},
+        {3, 2, 1}
+    };
+    
+    int[][] notSym = {
+        {1, 9, 3},
+        {2, 2, 2},
+        {3, 2, 1}
+    };
+    
+    System.out.println(sym(sym));
+    System.out.println(sym(notSym));
   }
 }
