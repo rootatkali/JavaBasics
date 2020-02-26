@@ -113,6 +113,7 @@ public class Matrices {
     return true;
   }
   
+  // MAIN EXECUTION BLOCK
   public static void main(String[] args) {
     int[][] test = genMat(10, 10, 0, 9);
     System.out.println(matToString(test));
