@@ -281,4 +281,10 @@ public class Helper {
     }
     return sb.toString().strip();
   }
+  
+  public static <T> void swap(T[][] mat, int r1, int c1, int r2, int c2) {
+    T tmp = mat[r1][c1];
+    mat[r1][c1] = mat[r2][c2];
+    mat[r2][c2] = tmp;
+  }
 }
