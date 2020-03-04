@@ -3,9 +3,6 @@ package mar.m04;
 import canvasML.Canvas;
 import canvasML.Line;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
 import static helper.Helper.*;
 
 public class Sorting {
