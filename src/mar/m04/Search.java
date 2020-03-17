@@ -1,5 +1,7 @@
 package mar.m04;
 
+import canvasML.Canvas;
+import canvasML.Line;
 import helper.Helper;
 
 import java.util.Arrays;
@@ -12,6 +14,32 @@ public class Search {
       }
     }
     return -1;
+  }
+  
+  public static void dispArr(int[] arr, String color) {
+    int maxVal = Integer.MIN_VALUE, minVal = Integer.MAX_VALUE;
+    // Find largest and smallest value
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] > maxVal)
+        maxVal = arr[i];
+      if (arr[i] < minVal)
+        minVal = arr[i];
+    }
+    
+    // Reduce by smallest
+    for (int i = 0; i < arr.length; i++) {
+      arr[i] -= minVal;
+    }
+    maxVal -= minVal;
+    
+    int len = Canvas.canvasSingleton.HEIGHT / maxVal;
+    int dis = Canvas.canvasSingleton.WIDTH / arr.length;
+    Line l = new Line(1, 400, 1, 400, color);
+    for (int i = 0; i < arr.length; i++) {
+      l.setPoints(l.getXs(), 400, l.getXs(), 400 - (arr[i] * len));
+      l.draw();
+      l.move(dis, 0);
+    }
   }
   
   // Works only on a sorted array
@@ -39,10 +67,12 @@ public class Search {
   }
   
   public static void main(String[] args) {
-    int[] arr = Helper.genArr(1000, 0, 2000);
+    int[] arr = Helper.genArr(600, 0, 600);
     Arrays.sort(arr);
-    
-    System.out.println(linearSearch(arr, 1000));
-    System.out.println(binarySearch(arr, 1000));
+    System.out.println(Arrays.toString(arr));
+    dispArr(arr, "blue");
+    int binary = binarySearch(arr, 200);
+    Canvas.getCanvas().wait(1000);
+    Line line = new Line(binary, 400, binary, 400 - arr[binary], "green");
   }
 }
