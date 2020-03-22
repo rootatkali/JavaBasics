@@ -56,11 +56,12 @@ public class Date {
   }
   
   public boolean equals(Object o) {
+    // Checks for memory pointer, null pointer and type
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
+    
+    // Standard comparison
     Date date = (Date) o;
-    return day == date.day &&
-        month == date.month &&
-        year == date.year;
+    return (day == date.day) && (month == date.month) && (year == date.year);
   }
 }
