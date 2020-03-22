@@ -33,7 +33,7 @@ public class Item {
     if (stock <= 0) return;
     this.stock += stock;
   }
-   
+  
   public int buy(int amount) {
     if (amount <= 0) {
       System.err.println("Can't buy negative items!");
@@ -47,7 +47,15 @@ public class Item {
     return amount * cost;
   }
   
-  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    
+    Item item = (Item) o;
+    
+    return (code == item.code) && (cost == item.cost) && (stock == item.stock);
+  }
+  
   public String toString() {
     return "Item[code=" + code + ", cost=" + cost + ", stock=" + stock + "]";
   }
