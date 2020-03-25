@@ -12,9 +12,12 @@ public class Date {
   }
   
   public Date(Date d) {
+    this(d.day, d.month, d.year); // Better way to use this constructor
+    /*
     this.day = d.day; // Because I'm accessing from the Date class, I can use d.day
     this.month = d.month;
     this.year = d.year;
+     */
   }
   
   public int getDay() {
@@ -43,12 +46,37 @@ public class Date {
   
   public boolean isBefore(Date d) {
     if (d.year > year) return true;
-    else if (d.month > month) return true;
-    else return d.day > day;
+    if (d.year < year) return false;
+    if (d.month < month) return false;
+    if (d.month > month) return true;
+    return d.day > day;
   }
   
   public boolean isAfter(Date d) {
     return !(this.isBefore(d) || this.equals(d)); // If not before or same, then is after
+  }
+  
+  /**
+   * Returns a string representation of the Date.
+   *
+   * @param delimiter The separator between the date, the month and the year, e.g "/" or "."
+   * @return The date in dd MM yyyy format.
+   */
+  public String format(String delimiter) {
+    return (day > 9 ? day : "0" + day) // if (day > 9) day else "0" + day
+        + delimiter
+        + (month > 9 ? month : "0" + month) // if (month > 9) month else "0" + month
+        + delimiter
+        + year;
+  }
+  
+  /**
+   * Formats the date using the default delimiter, "/".
+   *
+   * @return The date in dd/MM/yyyy format.
+   */
+  public String format() {
+    return format("/");
   }
   
   public String toString() {

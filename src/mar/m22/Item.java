@@ -2,7 +2,7 @@ package mar.m22;
 
 // This class is a item in a shop
 public class Item {
-  private final int code; // Product code
+  private final int code; // Product code - cannot be changed.
   private int cost; // Cost for one item
   private int stock; // Stock in store
   
@@ -10,6 +10,12 @@ public class Item {
     this.code = code;
     this.cost = cost;
     this.stock = stock;
+  }
+  
+  public Item(Item i) {
+    this.code = i.code;
+    this.cost = i.cost;
+    this.stock = i.stock;
   }
   
   public int getCode() {
@@ -34,6 +40,13 @@ public class Item {
     this.stock += stock;
   }
   
+  /**
+   * Removes desired amount from stock (if there is enough stock), and returns the total price for
+   * all items.
+   *
+   * @param amount The amount of items to buy
+   * @return this.price * amount, or -1 if the transaction failed.
+   */
   public int buy(int amount) {
     if (amount <= 0) {
       System.err.println("Can't buy negative items!");

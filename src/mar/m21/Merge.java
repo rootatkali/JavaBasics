@@ -1,3 +1,7 @@
+/*
+Merge sorts.
+Author: Rotem Moses, 21-March-2020
+ */
 package mar.m21;
 
 import java.util.Arrays;
