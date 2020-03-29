@@ -2,6 +2,7 @@ package mar.m22;
 
 public class Main {
   /**
+   * This is a helper method.
    * Formats the balance of two accounts
    * @param b1 A BankAccount.
    * @param b2 A BankAccount.
@@ -14,10 +15,13 @@ public class Main {
   
   public static void main(String[] args) {
     Date date = new Date(24, 3, 2020);
+    
     Item butter = new Item(1, 4, 15);
     Item milk = new Item(2, 5, 20);
+    
     BankAccount shop = new BankAccount("Shop", "000-0001/23", 0);
     BankAccount rotem = new BankAccount("Rotem", "000-0002/46", 100);
+    
     System.out.println("Transaction log for date: " + date.format());
     
     // Rotem buys 3 milk

@@ -10,6 +10,9 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# All files to exclude
+/src/exclude/CanvasML.java
+
 # Package Files #
 *.jar
 *.war
