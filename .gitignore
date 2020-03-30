@@ -11,7 +11,7 @@
 .mtj.tmp/
 
 # All files to exclude
-/src/exclude/CanvasML.java
+src/exclude/
 
 # Package Files #
 *.jar
