@@ -39,6 +39,18 @@ public class Time {
     this.seconds = seconds;
   }
   
+  public boolean isBefore(Time t) {
+    if (t.hours > hours) return true;
+    if (t.hours < hours) return false;
+    if (t.minutes < minutes) return false;
+    if (t.minutes > minutes) return true;
+    return t.seconds > seconds;
+  }
+  
+  public boolean isAfter(Time t) {
+    return !(this.isBefore(t) || this.equals(t));
+  }
+  
   public int seconds(Time t) {
     int secs = 0;
     secs += (t.hours - this.hours) * 3600;
