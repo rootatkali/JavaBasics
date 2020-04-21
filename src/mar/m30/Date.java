@@ -84,11 +84,13 @@ public class Date {
    * @return The date in dd MM yyyy format.
    */
   public String format(String delimiter) {
-    return (day > 9 ? day : "0" + day) // if (day > 9) day else "0" + day
-        + delimiter
-        + (month > 9 ? month : "0" + month) // if (month > 9) month else "0" + month
-        + delimiter
-        + year;
+    return new StringBuilder()
+        // if (day > 9) day else "0" + day
+        .append(day > 9 ? day : "0" + day).append(delimiter)
+        // if (month > 9) month else "0" + month
+        .append(month > 9 ? month : "0" + month).append(delimiter)
+        .append(year)
+        .toString();
   }
   
   /**

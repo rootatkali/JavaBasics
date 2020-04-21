@@ -279,7 +279,8 @@ public class Helper {
       }
       sb.append((i == (matrix.length - 1)) ? "]" : "],\n");
     }
-    return sb.toString().strip();
+    //return sb.toString().strip();
+    return sb.toString().trim();
   }
   
   public static <T> void swap(T[][] mat, int r1, int c1, int r2, int c2) {

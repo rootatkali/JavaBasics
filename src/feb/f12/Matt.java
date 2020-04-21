@@ -65,11 +65,13 @@ public class Matt {
           stage[i][j + idx] = 1;
           ret.append("(").append(i).append(", ").append(j + idx).append(")\n");
         }
-        return ret.toString().strip();
+        // return ret.toString().strip();
+        return ret.toString().trim();
       }
     }
     
-    return ret.toString().strip();
+    //return ret.toString().strip();
+    return ret.toString().trim();
   }
   
   private static int[] largestSeq(int[] row) {

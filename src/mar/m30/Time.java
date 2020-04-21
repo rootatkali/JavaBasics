@@ -59,6 +59,14 @@ public class Time {
     return secs;
   }
   
+  public String format() {
+    StringBuilder sb = new StringBuilder();
+    sb.append(hours > 9 ? hours : "0" + hours).append(":");
+    sb.append(minutes > 9 ? minutes : "0" + minutes).append(":");
+    sb.append(seconds > 9 ? seconds : "0" + seconds);
+    return sb.toString();
+  }
+  
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
