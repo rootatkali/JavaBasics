@@ -70,10 +70,12 @@ public class Point4D {
     return (x == p.x) && (y == p.y) && (z == p.z) && (t == p.t);
   }
   
-  /*
+  /**
    * Calculates the distance between this and another point.
+   * @param p Another point.
+   * @return The square root of the sum of the squares of the differences between each axis.
    */
-  public int distance(Point4D p) {
+  public double distance(Point4D p) {
     double result = 0.0;
     
     result += Math.pow((x - p.x), 2);
@@ -82,6 +84,6 @@ public class Point4D {
     result += Math.pow((t - p.t), 2);
     
     result = Math.sqrt(result);
-    return (int) result;
+    return result;
   }
 }
