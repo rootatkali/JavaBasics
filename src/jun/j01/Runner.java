@@ -7,14 +7,6 @@ public class Runner {
   private int yearB;
   private Item[] lstItems;
   
-  private Item[] copy(Item[] arr) {
-    Item[] ret = new Item[arr.length];
-    for (int i = 0; i < arr.length; i++) {
-      ret[i] = new Item(arr[i]);
-    }
-    return ret;
-  }
-  
   public Runner(String id, int yearB, int maxM) {
     this.id = id;
     this.yearB = yearB;
@@ -25,7 +17,7 @@ public class Runner {
   public Runner(Runner r) {
     id = r.id;
     yearB = r.yearB;
-    lstItems = copy(r.lstItems);
+    lstItems = r.lstItems;
   }
   
   public String getId() {
@@ -37,11 +29,11 @@ public class Runner {
   }
   
   public Item[] getLstItems() {
-    return copy(lstItems);
+    return lstItems;
   }
   
   public void setLstItems(Item[] lstItems) {
-    this.lstItems = copy(lstItems);
+    this.lstItems = lstItems;
   }
   
   @Override

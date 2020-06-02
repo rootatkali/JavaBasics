@@ -2,6 +2,8 @@ package jun.j01;
 
 import helper.Helper;
 
+import java.util.Arrays;
+
 public class MrtnRace {
   private String country;
   private int year;
@@ -53,7 +55,7 @@ public class MrtnRace {
     Runner r = null;
     for (Runner rr : runners) {
       if (rr == null) continue;
-      if (r.getId().equals(id)) {
+      if (rr.getId().equals(id)) {
         r = rr;
         break;
       }
@@ -67,5 +69,14 @@ public class MrtnRace {
     if (index == -1) return;
     items[index] = item;
     r.setLstItems(items);
+  }
+  
+  @Override
+  public String toString() {
+    return "MrtnRace{" +
+        "country='" + country + '\'' +
+        ", year=" + year +
+        ", runners=" + Arrays.toString(runners) +
+        '}';
   }
 }
